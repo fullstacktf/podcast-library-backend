@@ -4,7 +4,7 @@ const homeRouter = express.Router();
 const podcastsRouter = require("./controllers/podcasts.js") //!
 
 homeRouter.get("/", (req, res) => {
-  res.send({ podcast });
+  res.send("Homepage");
 });
 
 app.use(homeRouter);
