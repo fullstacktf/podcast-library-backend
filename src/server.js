@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 3001;
+const homeRouter = express.Router();
+const podcastsRouter = require("./controllers/podcasts.js") //!
 
-
-
-app.listen(port, function (err) {
-  if (err) console.log(err);
-  console.log("Server listening on: ", port);
+homeRouter.get("/", (req, res) => {
+  res.send("Homepage");
 });
+
+app.use(homeRouter);
+app.use('/podcasts', podcastsRouter) //!
+app.listen("3001", () => console.log("Listening on port: 3001"));
