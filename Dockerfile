@@ -21,7 +21,6 @@ RUN npm install nodemon -g
 # Copy app:
 COPY . .
 
-
 #Run app in port 8000
 EXPOSE 8000
 
