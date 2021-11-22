@@ -1,9 +1,28 @@
-FROM node:10-alpine
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
-COPY package*.json ./
-USER node
+############################################################
+# Dockerfile node.js - Express
+############################################################
+
+# Imagen:
+FROM node
+
+# Directory:
+RUN mkdir -p /src/
+
+# Configure directory:
+WORKDIR /src/
+
+# Install packages:
+COPY package.json .
 RUN npm install
-COPY --chown=node:node . .
-EXPOSE 8080
-CMD [ "node", "app.js" ]
+
+# Install Nodemon:
+RUN npm install nodemon -g
+
+# Copy app:
+COPY . .
+
+#Run app in port 8000
+EXPOSE 8000
+
+# Run app when container is running:
+CMD nodemon -L --watch . src/server.js
