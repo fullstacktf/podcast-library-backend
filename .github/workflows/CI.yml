@@ -1,0 +1,23 @@
+name: Build back-end
+on: push
+
+jobs:
+  build-app:
+    name: Run back-end
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1 
+        with:
+          node-version: '14.18.1'
+
+      - name: Install dependencies
+        run: npm install    
+        
+      - name: test
+        run: |
+         npm run test
