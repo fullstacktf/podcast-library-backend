@@ -1,6 +1,12 @@
 name: Backend podbuster
 on: push
-
+   on:
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
 jobs:
   build-app:
     name: Run back-end
