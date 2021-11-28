@@ -1,33 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-const podcasts = [
-  {
-    id: 0,
-    title: "Matrix",
-    genre: "Action",
-    autor: "Wachowski",
-    description: "lorem",
-    image: "undefined",
-  },
-  {
-    id: 1,
-    title: "Piratas del Caribe",
-    genre: "Action",
-    autor: "maria",
-    description: "lorem",
-    image: "undefined",
-  },
-  {
-    id: 2,
-    title: "Piratas del Caribe 2",
-    genre: "Comedy",
-    autor: "rafa",
-    description: "lorem",
-    image: "undefined",
-  },
-];
-
 router.get("/", (req, res) => {
   res.send({ podcasts });
 });
@@ -61,5 +34,16 @@ router.get("/autor/:autor", (req, res) => {
   );
   res.send({ podcast });
 });
+
+router.post("/podcast",(req,res)=>{
+  if(bodyisEmpty(req.body)){
+      res.status(400).send('No disponible');
+  }else{
+      podcasts.push({id: req.params.id, title: req.params.title, author: req.params.author, episode: req.params.episode, description: req.params.description, image: req.params.image, language: req.params.language, url: req.params.url, genre: req.params.genre });
+      res.send({podcasts})
+  }
+
+});
+
 
 module.exports = router;
