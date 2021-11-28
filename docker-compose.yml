@@ -8,6 +8,10 @@ services:
         volumes: 
             - ./mongo-data/db/seed.js:/docker-entrypoint-initdb.d/seed.js
             - mongodata:/data/db
+            - ./run.sh:/run.sh
+        command: bash -c "
+            chmod +x ./run.sh
+            run ./run.sh "
     web:
         build: .
         depends_on:

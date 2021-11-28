@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile node.js - Express
+# Dockerfile Web node.js - Express
 ############################################################
 
 # Imagen:
@@ -26,3 +26,7 @@ EXPOSE 8000
 
 # Run app when container is running:
 CMD nodemon -L --watch . src/server.js
+
+# Run seed.js:
+# RUN chmod +x ./run.sh
+# RUN ./run.sh
