@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Checkout repositorio
+        uses: actions/checkout@v2.4.0
 
-      - name: Set up Node
+      - name: Instalar Node
         uses: actions/setup-node@v1 
         with:
           node-version: '14.18.1'
 
-      - name: Install dependencies
+      - name: Instalar dependencias
         run: npm install    
         
       - name: test
