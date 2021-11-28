@@ -9,7 +9,12 @@ services:
             - ./mongo-data/db/seed.js:/docker-entrypoint-initdb.d/seed.js
             - mongodata:/data/db
             - ./run.sh:/run.sh
-        command: sh -c "mongosh docker-entrypoint-initdb.d/seed.js"
+    
+    mongo-db:
+        build: ./mongo-data
+        links:
+            - db
+    
     web:
         build: .
         depends_on:
