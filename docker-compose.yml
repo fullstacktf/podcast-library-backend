@@ -20,7 +20,7 @@ services:
         depends_on:
             - db
         ports:
-            - "8000:8000"
+            - "3001:3001"
         volumes: 
             - .:/src/
             - /node_modules

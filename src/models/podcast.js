@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const podcastSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -8,4 +7,4 @@ const podcastSchema = new mongoose.Schema({
     admin: Boolean
 });
 
-module.exports.Podcasts = mongoose.model("Podcasts", podcastSchema);
+module.exports.Podcasts = mongoose.model("Podcast", podcastSchema);
