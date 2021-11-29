@@ -1,13 +1,23 @@
 const express = require("express");
+const { mongo } = require("mongoose");
 const router = express.Router();
-const podcast = require("../models/podcast");
+const Podcast = require("../models/podcast");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   res.send("We are on podcasts");
 });
 
 router.post("/", (req, res) => {
   console.log(req.body);
+
+  const post = {
+    name: req.body.name,
+    email: req.body.email,
+    age: req.body.age,
+    admin: req.body.admin
+  };
+
+  new Podcast(post).save();
 });
 
 router.get("/specific", (req, res) => {
