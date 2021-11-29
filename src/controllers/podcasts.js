@@ -3,12 +3,10 @@ const { mongo } = require("mongoose");
 const router = express.Router();
 const Podcast = require("../models/podcast");
 
-router.get("/", async (req, res) => {
-  // res.send("We are on podcasts");
+router.get("/all", async (req, res) => {
   try {
     const podcasts = await Podcast.find();
     res.json(podcasts);
-
   } catch (err) {
     res.json({ message: err })
   }
