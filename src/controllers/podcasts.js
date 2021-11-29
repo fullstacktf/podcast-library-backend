@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send({ podcasts });
+  res.send({});
 });
 
 router.get("/:id", (req, res) => {
@@ -35,12 +35,12 @@ router.get("/autor/:autor", (req, res) => {
   res.send({ podcast });
 });
 
-router.post("/podcast",(req,res)=>{
-  if(bodyisEmpty(req.body)){
-      res.status(400).send('No disponible');
-  }else{
-      podcasts.push({id: req.params.id, title: req.params.title, author: req.params.author, episode: req.params.episode, description: req.params.description, image: req.params.image, language: req.params.language, url: req.params.url, genre: req.params.genre });
-      res.send({podcasts})
+router.post("/podcast", (req, res) => {
+  if (bodyisEmpty(req.body)) {
+    res.status(400).send('No disponible');
+  } else {
+    podcasts.push({ id: req.params.id, title: req.params.title, author: req.params.author, episode: req.params.episode, description: req.params.description, image: req.params.image, language: req.params.language, url: req.params.url, genre: req.params.genre });
+    res.send({ podcasts })
   }
 
 });
