@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
+      <title> ocument</title>
+  </head>
+  <body>
+      <h1>Registration in Podbuster</h1>
+      <form>id="reg-form"
+          <input type="text" autocomplete="off" id=username placeholder="Username" />
+          <input type="password" autocomplete="off" id=pasword placeholder="password"  />
+          <input type="submit" value= "Submit Form"/>
+     </form>
+
+     <script>
+         const form = document.getElementById('reg-form')
+         form.addEventListener('submit', registerUser)
+
+        async function resgistrerUser(event) {
+            event.preventDefault()
+        const Username = document.getElementById('user')
+        const password =document.getElementById('pasword')
+        
+    const result = await fetch('/api/register',{
+             method: 'POST',
+             headers:{
+                 'content-Type': 'application/json'
+             },
+             body: JSON.stringfy({
+                 username, 
+                 password
+             })
+        }).then ((res) => res.json ())
+
+        console.log(result)
+    
+    }
+     </script>
+       
+
+  </body>  
+
+</html>
