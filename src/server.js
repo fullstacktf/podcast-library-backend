@@ -6,11 +6,11 @@ require("dotenv/config");
 
 app.use(bodyParser.json());
 
-//Connect to db
+//Connect to db ->
 mongoose.connect(
   process.env.DB_CONNECTION,
   { useNewUrlParser: true },
-  () => console.log("connected to DB!")
+  () => console.log("💽 Connected to DB!")
 );
 
 // const db = mongoose.connection;
@@ -20,13 +20,13 @@ mongoose.connect(
 //   console.log("conectados PRRRRRRRR");
 // });
 
-//Import Routes
+//Import Routes ->
 const podcastsRoute = require("./controllers/podcasts.js"); //!
 app.use('/podcasts', podcastsRoute); //!
 
-//ROUTES
+//Routes ->
 app.get('/', (req, res) => {
-  res.send("Home podcastlibrary");
+  res.send("✅ The api is working, access /podcasts/all to get the data of all podcasts.");
 })
 
 
