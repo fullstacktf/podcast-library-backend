@@ -38,7 +38,7 @@ http://localhost:3001/
 
 - 💻 [Ricardo Pineda - @ririchi2](https://github.com/ririchi2)
 - 💻 [Pablo Hernández - @pheralb](https://github.com/pheralb)
-- 💻 [@RafaGG21](https://github.com/RafaGG21)
+- 💻 [Rafael Gandolfo García - @RafaGG21](https://github.com/RafaGG21)
 - 💻 [María Lujan - @MariaLujanIbrahin](https://github.com/MariaLujanIbrahin)
 
 # 📁 Project Structure:
