@@ -35,5 +35,4 @@ jobs:
         with:
           token: ${{secrets.DIGITALOCEAN_ACCESS_TOKEN }}
             
-      - name: Provide Droplet and deploy container
-        run: doctl compute droplet create "ihood-backend" --image docker-18-04 --size s-1vcpu-1gb --region FRA1
+      
