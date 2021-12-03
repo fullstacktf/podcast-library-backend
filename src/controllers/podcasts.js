@@ -12,52 +12,50 @@ router.get("/all", async (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
-  console.log(req.body);
+router.post("/insert", async (req, res) => {
 
-  const post = {
-    name: req.body.name,
-    email: req.body.email,
-    age: req.body.age,
-    admin: req.body.admin
-  };
-
-  new Podcast(post).save();
+  const {title,author,episode,description,image,language,genre } = req.body;
+  
+  const newPodcast = new Podcast({title,author,episode,description,image,language,genre});
+  await newPodcast.save();
+ 
+  res.status(200)
 });
 
-router.get("/specific", (req, res) => {
-  res.send("Specific podcast");
+
+router.get("/:id", async (req, res) => {
+  try {
+   await Podcast.findById(req.params.id).then(result =>{
+      res.status(200).json({
+        podcast:result
+      })
+    })
+  } catch (err) {
+    res.json({ message: err })
+  }
 });
 
-// router.get("/:id", (req, res) => {
-//   const userId = parseInt(req.params.id);
-//   const user = podcasts.find((user) => user.id === userId);
-//   res.send({ user });
-// });
+router.get("/title/:title", async (req, res) => {
+    const podcastName = await Podcast.findOne({title: req.params.title});
+    console.log(podcastName)
+    res.status(200).json(podcastName);
+});
 
-// router.get("/title/:title", (req, res) => {
-//   const title = req.params.title.toLowerCase();
-//   const podcast = podcasts.find(
-//     (podcast) => podcast.title.toLowerCase() === title
-//   );
-//   res.send({ podcast });
-// });
+router.delete("/:id", async (req, res) => {
+  const podcastName = await Podcast.deleteOne({_id: req.params.id});
+  res.status(200).json(podcastName);
+});
 
-// router.get("/genre/:genre", (req, res) => {
-//   const genre = req.params.genre.toLowerCase();
-//   const podcast = podcasts.filter(
-//     (podcast) => podcast.genre.toLowerCase() === genre
-//   );
-//   res.send({ podcast });
-// });
 
-// router.get("/autor/:autor", (req, res) => {
-//   const autor = req.params.autor.toLowerCase();
-//   const podcast = podcasts.filter(
-//     (podcast) => podcast.autor.toLowerCase() === autor
-//   );
-//   res.send({ podcast });
-// });
+router.get("/genre/:genre", async (req, res) => {
+  const podcast = await Podcast.find({genre: req.params.genre})
+  res.status(200).json(podcast);
+});
+
+router.get("/author/:author", async (req, res) => {
+  const podcast = await Podcast.find({author: req.params.author})
+  res.status(200).json(podcast);
+});
 
 // router.post("/podcast", (req, res) => {
 //   if (bodyisEmpty(req.body)) {
