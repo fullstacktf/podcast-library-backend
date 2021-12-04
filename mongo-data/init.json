@@ -7,7 +7,8 @@
     "image": "http://i3.ytimg.com/vi/jgjiMixh_nE/hqdefault.jpg",
     "language": "english",
     "url": "https://www.youtube.com/watch?v=jgjiMixh_nE&t=1660s",
-    "genre": "Veganismo"
+    "genre": "Veganismo",
+    "provider": "YouTube"
   },
   {
     "title": "Space: What is dark matter",
@@ -17,7 +18,8 @@
     "image": "http://i3.ytimg.com/vi/jgjiMixh_nE/hqdefault.jpg",
     "language": "english",
     "url": "https://www.youtube.com/watch?v=mG0P0-cwfd0",
-    "genre": "Física"
+    "genre": "Física",
+    "provider": "YouTube"
   },
   {
     "title": "Inteligencia emocional",
@@ -27,7 +29,8 @@
     "image": "http://i3.ytimg.com/vi/WDqXWA5pBUE/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=WDqXWA5pBUE",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "¿Cómo nos afecta el estrés físicamente?",
@@ -37,7 +40,8 @@
     "image": "http://i3.ytimg.com/vi/hu-OH6UqlNI/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=hu-OH6UqlNI",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "El sentimiento de culpa",
@@ -47,7 +51,8 @@
     "image": "http://i3.ytimg.com/vi/S0pHHydQGAU/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=S0pHHydQGAU",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "Autosabotaje",
@@ -57,7 +62,8 @@
     "image": "http://i3.ytimg.com/vi/6ZQ1pIZeTXg/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=6ZQ1pIZeTXg",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "Poner fin a una relación de la forma más saludable",
@@ -67,7 +73,8 @@
     "image": "http://i3.ytimg.com/vi/adM-f1-Lvmg/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=adM-f1-Lvmg",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "Asertividad, algo más que saber decir NO",
@@ -77,7 +84,8 @@
     "image": "http://i3.ytimg.com/vi/lvDkZpbzJWo/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=lvDkZpbzJWo",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "Xenofobia",
@@ -87,7 +95,8 @@
     "image": "http://i3.ytimg.com/vi/bBM98uFb7Ps/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=bBM98uFb7Ps",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "La química del amor",
@@ -97,7 +106,8 @@
     "image": "http://i3.ytimg.com/vi/QnagzT6uzTE/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=QnagzT6uzTE",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   },
   {
     "title": "El apego emocional",
@@ -107,6 +117,7 @@
     "image": "http://i3.ytimg.com/vi/K8cHFR4mZGo/hqdefault.jpg",
     "language": "español",
     "url": "https://www.youtube.com/watch?v=K8cHFR4mZGo",
-    "genre": "Psicología"
+    "genre": "Psicología",
+    "provider": "YouTube"
   }
 ]

@@ -4,10 +4,11 @@ const podcastSchema = new mongoose.Schema({
     author: String,
     episode: Number,
     description: String,
-    cover: String,
+    image: String,
     language: String,
     url: String,
-    genre: String
+    genre: String,
+    provider: String
 });
 
 module.exports = mongoose.model("Podcast", podcastSchema);
