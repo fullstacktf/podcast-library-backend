@@ -1,42 +1,43 @@
-name: Build front-end
+name: Build and Deplot back-end
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     name: Run back-end
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v2.4.0
-
       - name: Instalar Node
         uses: actions/setup-node@v1 
         with:
           node-version: '14.18.1'
-
       - name: Instalar dependencias
-        run: npm install    
-        
+        run: npm install       
       - name: test
         run: npm run test
     
   deploy: 
     needs: build
-      
-    runs-on: ubuntu-latest
-      
+    runs-on: ubuntu-latest 
     steps:
-      - name: Checkout files
-        uses: actions/checkout@v2
-          
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
         with:
           token: ${{secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          host: ${{secrets.HOST}
+          username: ${{ secrets.USERNAME }}
+        script: |
+          mkdir podbuster
+          cd podbuster
+          git clone git@github.com:fullstacktf/podcast-library-backend.git
+          chmod +x docker-compose.yml
+          chmod +x start.sh
+          ./start.sh
+          echo 'Deployment successfully to digital ocean'
             
       
