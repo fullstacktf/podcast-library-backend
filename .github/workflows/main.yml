@@ -34,9 +34,6 @@ jobs:
             mkdir podbuster
             cd podbuster
             git clone git@github.com:fullstacktf/podcast-library-backend.git
-            chmod +x docker-compose.yml
-            chmod +x start.sh
-            ./start.sh
             echo 'Deployment successfully to digital ocean'
             
       
