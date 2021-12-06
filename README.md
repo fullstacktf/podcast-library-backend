@@ -43,12 +43,12 @@ npm run start
 - ``GET - "/podcasts/title/:title"`` - Returns a podcast by title.
 - ``GET - "/podcasts/genre/:genre"`` - Returns podcasts by category.
 - ``GET - "/podcasts/author/:author"`` - Returns podcasts by author.
-- ``GET - "/best_podcasts/"`` - Returns a list of the best podcasts by genre.
-- ``GET - "/users/:id"`` - Returns a user by id.
 - ``POST - "/podcasts/:id"`` - add a podcast per id.
-- ``POST - "/users/:id"`` - add a user per id.
 - ``DELETE - "podcasts/:id"`` - Delete podcast by ID.
+
+- ``GET - "/users/:id"`` - Returns a user by id.
 - ``DELETE - "/users/:id"`` - Delete user by ID.
+- ``POST - "/users/:id"`` - add a user per id.
 
 # ⚙️ Tools:
 
