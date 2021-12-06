@@ -4,7 +4,20 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv/config");
 
-app.use(bodyParser.json());
+// Allow the API to be used by external URLs:
+app.use((req, res, next) => {
+  // Set the allowed URLs:
+  const allowedOrigins = ['http://localhost:3000/'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  //res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8020');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  return next();
+});
 
 //Connect to db ->
 mongoose.connect(
