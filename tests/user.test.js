@@ -26,7 +26,26 @@ describe('User Endpoints', () => {
                 expect(await Post.findOne({ _id: post.id })).toBeFalsy()
         })
     });  
-
+    test("POST /user", async () => {
+        const post = await Post.create({
+            username: "Post1",
+            password: "Loremipsum",
+        })
+    
+        await supertest(app)
+            .get("/user")
+            .expect(200)
+            .then((response) => {
+                // Check the response type and length
+                expect(Array.isArray(response.body)).toBeTruthy()
+                expect(response.body.length).toEqual(1)
+    
+                // Check the response data
+                expect(response.body[0]._id).toBe(post.id)
+                expect(response.body[0].title).toBe(post.username)
+                expect(response.body[0].content).toBe(post.password)
+            })
+    })
 
 
 });

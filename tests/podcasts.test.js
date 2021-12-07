@@ -100,25 +100,4 @@ describe('Podcasts Endpoints', () => {
         });
     });  
 
-    test("GET /user", async () => {
-        const post = await Post.create({
-            username: "Post 1",
-            password: "Lorem ipsum",
-        })
-    
-        await supertest(app)
-            .get("/user")
-            .expect(200)
-            .then((response) => {
-                // Check the response type and length
-                expect(Array.isArray(response.body)).toBeTruthy()
-                expect(response.body.length).toEqual(1)
-    
-                // Check the response data
-                expect(response.body[0]._id).toBe(post.id)
-                expect(response.body[0].title).toBe(post.username)
-                expect(response.body[0].content).toBe(post.password)
-            })
-    })
-
 });
