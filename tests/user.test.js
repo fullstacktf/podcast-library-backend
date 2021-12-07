@@ -1,5 +1,5 @@
 import supertest from 'supertest'
-import app from '../server.js'
+import app from '../src/server.js'
 import express from 'express'
 const router = express.Router()
 
