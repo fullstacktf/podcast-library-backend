@@ -11,4 +11,4 @@ const podcastSchema = new mongoose.Schema({
     provider: String
 });
 
-module.exports = mongoose.model("Podcast", podcastSchema);
+module.exports = mongoose.model("Podcasts", podcastSchema);
