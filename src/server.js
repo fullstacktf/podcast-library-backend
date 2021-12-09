@@ -57,3 +57,27 @@ app.get('/', (req, res) => {
 // app.use(homeRouter);
 
 app.listen(3001, () => console.log("Listening on port: 3001"));
+
+//para testing LUJÁN- Iría debajo de "db connection"
+//don't show the log when it is test
+if(config.util.getEnv('NODE_ENV') !== 'test') {
+  //use morgan to log at command line
+  app.use(morgan('combined')); //'combined' outputs the style LOGs
+}
+
+//parse application/json and look for raw text
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/json'}));
+
+app.get("/", (req, res) => res.json({message: "Welcome to our  page!"}));
+
+app.route("/podcast")
+  .get(podcast.getpodcasts)
+  .post(podcast.postcasts);
+app.route("/podcast/:id")
+  .get(podcast.getpodcadts)
+  .delete(podcast.deletepodcast);
+  
+  module.exports = app; // for testing
