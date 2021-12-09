@@ -24,7 +24,6 @@ env:
   IMAGE_NAME: "podcast-library-backend_web"
   
   build-docker:
-    needs: test
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     steps:
@@ -55,7 +54,6 @@ env:
       run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
 
   deploy:
-    needs: [test, build-docker]
     runs-on: debian-latest
     if: github.event_name == 'push' && ${{ github.ref == 'refs/heads/main' }}
     steps:
