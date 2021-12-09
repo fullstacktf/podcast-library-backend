@@ -15,9 +15,12 @@ jobs:
       - name: Deploy to Digital Ocean droplet via SSH action
         uses: fifsky/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
+          host: 165.232.65.65
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
 
           command: |
             touch hola.txt
+            - name: ls -a via ssh
+
+      
