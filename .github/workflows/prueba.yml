@@ -19,5 +19,5 @@ jobs:
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
 
-          script: |
+          command: |
             touch hola.txt
