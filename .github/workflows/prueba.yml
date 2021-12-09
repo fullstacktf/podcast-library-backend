@@ -16,7 +16,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           host: 165.232.65.65
-          user: ${{ secrets.SSH_USER }}
+          user: root
           key: ${{ secrets.SSH_KEY }}
 
           command: |
