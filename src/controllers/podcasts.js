@@ -54,20 +54,31 @@ router.delete("/:id", async (req, res) => {
 // ❓ 🔨 POST - /podcasts/insert ->
 router.post("/insert/", (req, res) => {
 
-  const post = {
-    title: req.body.title,
-    author: req.body.author,
-    episode: req.body.episode,
-    description: req.body.description,
-    image: req.body.image,
-    language: req.body.language,
-    genre: req.body.genre,
-    provider: req.body.provider,
-  }
+  // const post = {
+  //   title: req.body.title,
+  //   author: req.body.author,
+  //   episode: req.body.episode,
+  //   description: req.body.description,
+  //   image: req.body.image,
+  //   language: req.body.language,
+  //   genre: req.body.genre,
+  //   provider: req.body.provider,
+  // }
 
-  var newPodcast = new Podcast(post)
-  new Podcast().save(post);
-  res.status(200);
+  const dbPodcast = req.body;
+
+  Podcast.create(dbPodcast, (err, data) => {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(201).send(data)
+      new Podcast().save(dbPodcast)
+    }
+  });
+
+  // var newPodcast = new Podcast(post)
+  // new Podcast().save(post);
+  // res.status(200);
 });
 
 
