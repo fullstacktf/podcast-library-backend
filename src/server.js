@@ -1,43 +1,23 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const cors = require("cors");
+const podcastsRoute = require("./controllers/podcasts.js");
 require("dotenv/config");
 
-// Allow the API to be used by external URLs:
-app.use((req, res, next) => {
-  // Set the allowed URLs:
-  const allowedOrigins = ['http://localhost:3000/'];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-       res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-  //res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8020');
-  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  return next();
-});
+// 🚀 Configures the Access-Control-Allow-Origin CORS header ->
+app.use(cors());
 
-//Connect to db ->
+// ✅ Connect to db ->
 mongoose.connect(
   process.env.DB_CONNECTION,
   { useNewUrlParser: true },
   () => console.log("💽 Connected to DB!")
 );
 
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "CONNECTION ERROR"));
-// db.once("open", () => {
-//   // conectados!
-//   console.log("conectados PRRRRRRRR");
-// });
+// 🛫 Import Routes and home route ->
+app.use('/podcasts', podcastsRoute);
 
-//Import Routes ->
-const podcastsRoute = require("./controllers/podcasts.js"); //!
-app.use('/podcasts', podcastsRoute); //!
-
-//Routes ->
 app.get('/', (req, res) => {
   res.send("✅ The api is working, access /podcasts/all to get the data of all podcasts.");
 })
@@ -56,28 +36,28 @@ app.get('/', (req, res) => {
 
 // app.use(homeRouter);
 
-app.listen(3001, () => console.log("Listening on port: 3001"));
-
 //para testing LUJÁN- Iría debajo de "db connection"
 //don't show the log when it is test
-if(config.util.getEnv('NODE_ENV') !== 'test') {
+//if(config.util.getEnv('NODE_ENV') !== 'test') {
   //use morgan to log at command line
-  app.use(morgan('combined')); //'combined' outputs the style LOGs
-}
+ // app.use(morgan('combined')); //'combined' outputs the style LOGs
+//}
 
 //parse application/json and look for raw text
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/json'}));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: true}));
+//app.use(bodyParser.text());
+//app.use(bodyParser.json({ type: 'application/json'}));
 
-app.get("/", (req, res) => res.json({message: "Welcome to our  page!"}));
+//app.get("/", (req, res) => res.json({message: "Welcome to our  page!"}));
 
-app.route("/podcast")
-  .get(podcast.getpodcasts)
-  .post(podcast.postcasts);
-app.route("/podcast/:id")
-  .get(podcast.getpodcadts)
-  .delete(podcast.deletepodcast);
+//app.route("/podcast")
+ // .get(podcast.getpodcasts)
+ // .post(podcast.postcasts);
+//app.route("/podcast/:id")
+ // .get(podcast.getpodcadts)
+ // .delete(podcast.deletepodcast);
   
-  module.exports = app; // for testing
+  //module.exports = app; // for testing
+
+//app.listen(3001, () => console.log("Listening on port: 3001"));
