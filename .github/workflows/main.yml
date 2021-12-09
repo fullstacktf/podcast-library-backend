@@ -54,7 +54,7 @@ env:
       run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
 
   deploy:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' && ${{ github.ref == 'refs/heads/main' }}
     steps:
       - name: Deploy to Digital Ocean droplet via SSH action
