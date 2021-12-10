@@ -54,7 +54,7 @@ jobs:
           host: ${{ secrets.DO_HOST }}
           user: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_KEY }}
-
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           command: |
             cd podcast-library-backend_web
             docker pull registry.digitalocean.com/podcast-library-backend_web:latest
