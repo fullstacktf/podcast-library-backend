@@ -57,7 +57,7 @@ jobs:
           
           command: |
             cd podcast-library-backend_web
-            docker pull registry.digitalocean.com/podbuster/podcast-library-backend_web:latest
+            docker pull registry.digitalocean.com/podcast-library-backend_web:latest
             docker-compose down 
             docker-compose up 
             echo 'Deployment successfully to digital ocean'
