@@ -54,10 +54,10 @@ jobs:
           host: ${{ secrets.DO_HOST }}
           user: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_KEY }}
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          
           command: |
             cd podcast-library-backend_web
-            docker pull registry.digitalocean.com/podbuster:latest
+            docker pull registry.digitalocean.com/podbuster/podcast-library-backend_web:latest
             docker-compose down 
             docker-compose up 
             echo 'Deployment successfully to digital ocean'
