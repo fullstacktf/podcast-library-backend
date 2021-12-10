@@ -56,10 +56,10 @@ jobs:
           key: ${{ secrets.DO_KEY }}
 
           command: |
-            cd podcast-library-backend
+            cd podcast-library-backend_web
             docker pull registry.digitalocean.com/podcast-library-backend_web:latest
-            docker-compose down
-            docker-compose up
+            @docker-compose down
+            @docker-compose up
             echo 'Deployment successfully to digital ocean'
             
       
