@@ -47,14 +47,13 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && ${{ github.ref == 'refs/heads/main' }}
     steps:
       - name: Deploy to Digital Ocean droplet via SSH action
         uses: fifsky/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.DO_HOST }}
+          user: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_KEY }}
 
           script: |
             cd podcast-library-backend
