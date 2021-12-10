@@ -55,9 +55,9 @@ jobs:
           user: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_KEY }}
 
-          script: |
+          command: |
             cd podcast-library-backend
-            docker pull registry.digitalocean.com/podcast-library-backend:latest
+            docker pull registry.digitalocean.com/podcast-library-backend_web:latest
             echo 'Deployment successfully to digital ocean'
             
       
