@@ -9,12 +9,12 @@ services:
             - ./mongo-data/db/seed.js:/docker-entrypoint-initdb.d/seed.js
             - mongodata:/data/db
             - ./run.sh:/run.sh
-    
+
     mongo-db:
         build: ./mongo-data
         links:
             - db
-    
+
     web:
         build: .
         depends_on:
@@ -22,10 +22,9 @@ services:
         ports:
             - "3001:3001"
         volumes: 
-            - src:/src/
+            - .:/src/
             - /node_modules
         links:
             - db
-volumes:
-  mongodata:
-  src:
+volumes: 
+  mongodata
