@@ -27,4 +27,4 @@ services:
         links:
             - db
 volumes: 
-  mongodata
+  mongodata:
