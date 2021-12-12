@@ -60,4 +60,4 @@ app.get('/', (req, res) => {
   
   //module.exports = app; // for testing
 
-//app.listen(3001, () => console.log("Listening on port: 3001"));
+app.listen(3001, () => console.log("✅ Listening on port: 3001"));

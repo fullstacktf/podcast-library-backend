@@ -16,11 +16,8 @@ router.get("/all", async (req, res) => {
 // 🚀 GET - /podcasts/:id ->
 router.get("/:id", async (req, res) => {
   try {
-    await Podcast.findById(req.params.id).then((result) => {
-      res.status(200).json({
-        podcast: result,
-      });
-    });
+    const podcast = await Podcast.find({ _id: req.params.id });
+    res.json(podcast);
   } catch (err) {
     res.json({ message: err });
   }
@@ -28,21 +25,32 @@ router.get("/:id", async (req, res) => {
 
 // 🚀 GET - /podcasts/title/:title ->
 router.get("/title/:title", async (req, res) => {
-  const podcastName = await Podcast.findOne({ title: req.params.title });
-  console.log(podcastName);
-  res.status(200).json(podcastName);
+  try {
+    const podcast = await Podcast.find({ title: req.params.title });
+    res.json(podcast);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 // 🚀 GET - /podcasts/genre/:genre ->
 router.get("/genre/:genre", async (req, res) => {
-  const podcast = await Podcast.find({ genre: req.params.genre });
-  res.status(200).json(podcast);
+  try {
+    const podcast = await Podcast.find({ genre: req.params.genre });
+    res.json(podcast);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 // 🚀 GET - /podcasts/author/:author ->
 router.get("/author/:author", async (req, res) => {
-  const podcast = await Podcast.find({ author: req.params.author });
-  res.status(200).json(podcast);
+  try {
+    const podcast = await Podcast.find({ author: req.params.author });
+    res.json(podcast);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 // ❌ DELETE - /podcasts/id ->
@@ -53,7 +61,6 @@ router.delete("/:id", async (req, res) => {
 
 // ❓ 🔨 POST - /podcasts/insert ->
 router.post("/insert/", (req, res) => {
-
   // const post = {
   //   title: req.body.title,
   //   author: req.body.author,
@@ -69,10 +76,10 @@ router.post("/insert/", (req, res) => {
 
   Podcast.create(dbPodcast, (err, data) => {
     if (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     } else {
-      res.status(201).send(data)
-      new Podcast().save(dbPodcast)
+      res.status(201).send(data);
+      new Podcast().save(dbPodcast);
     }
   });
 
@@ -80,15 +87,5 @@ router.post("/insert/", (req, res) => {
   // new Podcast().save(post);
   // res.status(200);
 });
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;
