@@ -3,7 +3,7 @@
 ############################################################
 
 # Imagen:
-FROM node
+FROM node:17-slim
 
 # Directory:
 RUN mkdir -p /src/
