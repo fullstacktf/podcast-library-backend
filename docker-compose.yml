@@ -2,7 +2,6 @@ version: "2"
 
 services:
     db:
-        container_name: podcast-library-backend_db_1
         image: mongo
         ports:
             - "27017:27017"
@@ -17,17 +16,15 @@ services:
             - db
 
     web:
-        container_name: podcast-library-backend_web_1
         build: .
         depends_on:
             - db
         ports:
             - "3001:3001"
         volumes: 
-            - src:/src/
+            - .:/src/
             - /node_modules
         links:
             - db
 volumes: 
   mongodata:
-  src:
