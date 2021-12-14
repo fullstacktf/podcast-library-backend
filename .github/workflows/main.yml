@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v2.4.0      
+      - name: Instalar dependencias
+        uses: npm install 
       - name: test
         run: npm run test
  
