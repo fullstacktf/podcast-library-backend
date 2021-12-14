@@ -13,13 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repositorio
-        uses: actions/checkout@v2.4.0
-      - name: Instalar Node
-        uses: actions/setup-node@v1 
-        with:
-          node-version: '14.18.1'
-      - name: Instalar dependencias
-        run: npm install       
+        uses: actions/checkout@v2.4.0      
       - name: test
         run: npm run test
  
@@ -58,8 +52,10 @@ jobs:
           
           command: |
             cd podcast-library-backend_web
-            docker pull registry.digitalocean.com/podbuster/podcast-library-backend_web:latest
             docker-compose down 
+            docker rmi $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+            doctl registry login -t ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+            docker pull $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
             docker-compose up 
             echo 'Deployment successfully to digital ocean'
             
