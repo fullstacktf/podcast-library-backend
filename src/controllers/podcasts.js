@@ -3,6 +3,13 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Podcast = require("../models/podcast");
 
+// Middleware
+const bodyParser = require('body-parser');
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 // 🚀 GET - /podcasts/all ->
 router.get("/all", async (req, res) => {
   try {
@@ -60,28 +67,40 @@ router.delete("/:id", async (req, res) => {
 });
 
 // ❓ 🔨 POST - /podcasts/insert ->
-router.post("/insert/", (req, res) => {
-  // const post = {
-  //   title: req.body.title,
-  //   author: req.body.author,
-  //   episode: req.body.episode,
-  //   description: req.body.description,
-  //   image: req.body.image,
-  //   language: req.body.language,
-  //   genre: req.body.genre,
-  //   provider: req.body.provider,
-  // }
-
-  const dbPodcast = req.body;
-
-  Podcast.create(dbPodcast, (err, data) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.status(201).send(data);
-      new Podcast().save(dbPodcast);
-    }
+router.post("/insert/", async (req, res) => {
+  const post = new Podcast({
+    title: req.body.title,
+    author: req.body.author,
+    episode: req.body.episode,
+    description: req.body.description,
+    image: req.body.image,
+    language: req.body.language,
+    genre: req.body.genre,
+    provider: req.body.provider,
   });
+
+  try {
+
+    const podcastDB = await post.save();
+    res.json({
+      error: null,
+      data: podcastDB
+    })
+
+  } catch (error) {
+    res.status().json(error);
+  }
+
+  // const dbPodcast = req.body;
+
+  // Podcast.create(dbPodcast, (err, data) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   } else {
+  //     res.status(201).send(data);
+  //     new Podcast().save(dbPodcast);
+  //   }
+  // });
 
   // var newPodcast = new Podcast(post)
   // new Podcast().save(post);

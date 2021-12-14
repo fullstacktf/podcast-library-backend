@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const podcastsRoute = require("./controllers/podcasts.js");
+const authRoute = require("./controllers/auth.js");
 require("dotenv/config");
 
 // 🚀 Configures the Access-Control-Allow-Origin CORS header ->
@@ -17,6 +18,7 @@ mongoose.connect(
 
 // 🛫 Import Routes and home route ->
 app.use('/podcasts', podcastsRoute);
+app.use('/user', authRoute);
 
 app.get('/', (req, res) => {
   res.send("✅ The api is working, access /podcasts/all to get the data of all podcasts.");
@@ -39,8 +41,8 @@ app.get('/', (req, res) => {
 //para testing LUJÁN- Iría debajo de "db connection"
 //don't show the log when it is test
 //if(config.util.getEnv('NODE_ENV') !== 'test') {
-  //use morgan to log at command line
- // app.use(morgan('combined')); //'combined' outputs the style LOGs
+//use morgan to log at command line
+// app.use(morgan('combined')); //'combined' outputs the style LOGs
 //}
 
 //parse application/json and look for raw text
@@ -52,12 +54,12 @@ app.get('/', (req, res) => {
 //app.get("/", (req, res) => res.json({message: "Welcome to our  page!"}));
 
 //app.route("/podcast")
- // .get(podcast.getpodcasts)
- // .post(podcast.postcasts);
+// .get(podcast.getpodcasts)
+// .post(podcast.postcasts);
 //app.route("/podcast/:id")
- // .get(podcast.getpodcadts)
- // .delete(podcast.deletepodcast);
-  
-  //module.exports = app; // for testing
+// .get(podcast.getpodcadts)
+// .delete(podcast.deletepodcast);
+
+//module.exports = app; // for testing
 
 app.listen(3001, () => console.log("✅ Listening on port: 3001"));
