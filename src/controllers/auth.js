@@ -52,9 +52,14 @@ router.post("/login", async (req, res) => {
     const checkPassword = await bcrypt.compare(req.body.password, user.password);
     if (!checkPassword) return res.status(400).json({ error: true, message: "wrong password" });
 
-    res.json({
+    const token = jwt.sign({
+        username: user.username,
+        id: user._id
+    }, process.env.TOKEN_SECRET);
+
+    res.header("auth-token", token).json({
         error: null,
-        message: "Bienvenido"
+        date: { token }
     });
 });
 
