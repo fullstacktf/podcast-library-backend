@@ -68,6 +68,7 @@ router.delete("/:id", async (req, res) => {
 
 // ❓ 🔨 POST - /podcasts/insert ->
 router.post("/insert/", async (req, res) => {
+
   const post = new Podcast({
     title: req.body.title,
     author: req.body.author,
@@ -82,29 +83,15 @@ router.post("/insert/", async (req, res) => {
   try {
 
     const podcastDB = await post.save();
+
     res.json({
       error: null,
       data: podcastDB
     })
 
   } catch (error) {
-    res.status().json(error);
+    res.status(400).json(error);
   }
-
-  // const dbPodcast = req.body;
-
-  // Podcast.create(dbPodcast, (err, data) => {
-  //   if (err) {
-  //     res.status(500).send(err);
-  //   } else {
-  //     res.status(201).send(data);
-  //     new Podcast().save(dbPodcast);
-  //   }
-  // });
-
-  // var newPodcast = new Podcast(post)
-  // new Podcast().save(post);
-  // res.status(200);
 });
 
 module.exports = router;
