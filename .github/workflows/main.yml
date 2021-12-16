@@ -1,9 +1,9 @@
 name: Build and Deploy back-end
 on:
   push:
-    #branches: [main]
-  #pull_request:
-    #branches: [main]
+    branches: [main]
+  pull_request:
+    branches: [main]
 env:
   REGISTRY: "registry.digitalocean.com/podbuster"
   IMAGE_NAME: "podcast-library-backend_web"
