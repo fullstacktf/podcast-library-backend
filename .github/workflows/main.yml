@@ -63,7 +63,7 @@ jobs:
             docker-compose down 
             docker rmi $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
             docker pull registry.digitalocean.com/podbuster/podcast-library-backend_web:latest
-            docker-compose up 
+            docker-compose up -d
             echo 'Deployment successfully to digital ocean'
             
       
