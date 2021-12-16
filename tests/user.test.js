@@ -1,51 +1,55 @@
-import supertest from 'supertest'
-import app from '../src/server.js'
-import express from 'express'
-const router = express.Router()
+process.env.NODE_ENV = 'test';
 
-const supertest = require('supertest');
-const requestWithSupertest = supertest(server);
 
-describe('User Endpoints', () => {
-    it('GET /user/:id should show a user', async () => {
-        const res = await requestWithSupertest.get('/users/3')
-        expect(res.statusCode).toEqual(200)
-        expect(res.body).toHaveProperty('user3')
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+const expect = require('chai').expect;
+
+
+chai.use(chaiHttp);
+const url= 'http://localhost:3001';
+
+var agent = chai.request.agent(url)
+
+
+
+describe('Authenticate a user: ',()=>{
+    it('should receive an OK and a cookie with the authentication token', (done) => {
+    agent
+    .get('/authentication')
+      .auth('user', 'password')
+    .end( function(err,res){
+    console.log(res.body)
+    expect(res).to.have.status(200);
+    return agent.get('/user')
+          .then(function (res) {
+            expect(res).to.have.status(200);
+            console.log(res.body)
+            done();
+          });
+    done();
     });
+    });
+   });
+   
 
-    it("DELETE user/:id", async () => {
-        const post = await Post.create({
-            username: "Usuario",
-            password: "Ee",
-            
-        })
-        await supertest(app)
-            .delete("/podcasts/" + post.id)
-            .expect(204)
-            .then(async () => {
-                expect(await Post.findOne({ _id: post.id })).toBeFalsy()
-        })
-    });  
-    test("POST /user", async () => {
-        const post = await Post.create({
-            username: "Post1",
-            password: "Loremipsum",
-        })
-    
-        await supertest(app)
-            .get("/user")
-            .expect(200)
-            .then((response) => {
-                // Check the response type and length
-                expect(Array.isArray(response.body)).toBeTruthy()
-                expect(response.body.length).toEqual(1)
-    
-                // Check the response data
-                expect(response.body[0]._id).toBe(post.id)
-                expect(response.body[0].title).toBe(post.username)
-                expect(response.body[0].content).toBe(post.password)
-            })
-    })
- 
-
+   describe('delete the user with id 1: ',()=>{
+    it('should delete the user with id 1', (done) => {
+    chai.request(url)
+    .get('/user/1')
+    .end( function(err,res){
+    console.log(res.body)
+    expect(res.body).to.have.lengthOf(2);
+    expect(res).to.have.status(200);
+    chai.request(url)
+    .del('/user/1')
+    .end( function(err,res){
+    console.log(res.body)
+    expect(res).to.have.status(200);
+    done();
+    });
+    });
+    });
 });
+   
+     
