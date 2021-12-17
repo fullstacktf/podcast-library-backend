@@ -73,6 +73,9 @@ router.post("/register", async (req, res) => {
     const email = await User.findOne({ email: req.body.email });
     if (email) return res.status(400).json({ error: true, message: "email already registered" });
 
+    const username = await User.findOne({ username: req.body.username });
+    if (username) return res.status(400).json({ error: true, message: "username already registered " });
+
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(req.body.password, salt);
 
