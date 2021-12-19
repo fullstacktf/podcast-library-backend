@@ -40,6 +40,31 @@ router.get("/all", async (req, res) => {
     }
 });
 
+// 🚀 GET - /user/:id ->
+router.get("/:id", async (req, res) => {
+    try {
+        await User.findById(req.params.id)
+            .then(result => {
+                res.status(200).json({
+                    user: result
+                })
+            })
+    } catch (err) {
+        res.json({ message: err })
+    }
+});
+
+// ❌ DELETE - /user/:id ->
+router.delete("/:id", async (req, res) => {
+    try {
+        const user = await User.deleteOne({ _id: req.params.id });
+        res.status(200).json(user);
+    } catch (error) {
+        res.json({ message: err })
+    }
+
+});
+
 // ❓ 🔨 POST - /user/login ->
 router.post("/login", async (req, res) => {
 
@@ -94,12 +119,6 @@ router.post("/register", async (req, res) => {
     } catch (error) {
         res.status(400).json(error);
     }
-});
-
-// ❌ DELETE - /user/id ->
-router.delete("/:id", async (req, res) => {
-    const user = await User.deleteOne({ _id: req.params.id });
-    res.status(200).json(user);
 });
 
 module.exports = router;
