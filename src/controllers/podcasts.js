@@ -23,7 +23,10 @@ router.get("/all", async (req, res) => {
 // 🚀 GET - /podcasts/:id ->
 router.get("/:id", async (req, res) => {
   try {
-    const podcast = await Podcast.find({ _id: req.params.id });
+    const podcast = await Podcast.findOne({ _id: req.params.id });
+    if (podcast) {
+      console.log("back:" + podcast);
+    }
     res.json(podcast);
   } catch (err) {
     res.json({ message: err });
