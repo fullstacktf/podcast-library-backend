@@ -43,6 +43,16 @@ router.get("/title/:title", async (req, res) => {
   }
 });
 
+// 🚀 GET - /podcasts/genre/all ->
+router.get("/genre/all", async (req, res) => {
+  try {
+    const podcast = await Podcast.distinct("genre");
+    res.json(podcast);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 // 🚀 GET - /podcasts/genre/:genre ->
 router.get("/genre/:genre", async (req, res) => {
   try {
@@ -63,7 +73,7 @@ router.get("/author/:author", async (req, res) => {
   }
 });
 
-// ❌ DELETE - /podcasts/id ->
+// ❌ DELETE - /podcasts/:id ->
 router.delete("/:id", async (req, res) => {
   const podcastName = await Podcast.deleteOne({ _id: req.params.id });
   res.status(200).json(podcastName);
@@ -79,6 +89,7 @@ router.post("/insert/", async (req, res) => {
     description: req.body.description,
     image: req.body.image,
     language: req.body.language,
+    url: req.body.url,
     genre: req.body.genre,
     provider: req.body.provider,
   });

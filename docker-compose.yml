@@ -3,8 +3,6 @@ version: "2"
 services:
     db:
         image: mongo
-        ports:
-            - "27017:27017"
         volumes: 
             - ./mongo-data/db/seed.js:/docker-entrypoint-initdb.d/seed.js
             - mongodata:/data/db
