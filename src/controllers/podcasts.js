@@ -24,9 +24,6 @@ router.get("/all", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const podcast = await Podcast.findOne({ _id: req.params.id });
-    if (podcast) {
-      console.log("back:" + podcast);
-    }
     res.json(podcast);
   } catch (err) {
     res.json({ message: err });
@@ -97,14 +94,12 @@ router.post("/insert/", async (req, res) => {
   });
 
   try {
-
     const podcastDB = await post.save();
 
     res.json({
       error: null,
       data: podcastDB
-    })
-
+    });
   } catch (error) {
     res.status(400).json(error);
   }

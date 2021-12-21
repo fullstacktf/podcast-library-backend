@@ -47,10 +47,10 @@ router.get("/:id", async (req, res) => {
             .then(result => {
                 res.status(200).json({
                     user: result
-                })
-            })
+                });
+            });
     } catch (err) {
-        res.json({ message: err })
+        res.json({ message: err });
     }
 });
 
@@ -60,9 +60,8 @@ router.delete("/:id", async (req, res) => {
         const user = await User.deleteOne({ _id: req.params.id });
         res.status(200).json(user);
     } catch (error) {
-        res.json({ message: err })
+        res.json({ message: err });
     }
-
 });
 
 // ❓ 🔨 POST - /user/login ->
@@ -115,7 +114,7 @@ router.post("/register", async (req, res) => {
         res.json({
             error: null,
             data: userDB
-        })
+        });
     } catch (error) {
         res.status(400).json(error);
     }

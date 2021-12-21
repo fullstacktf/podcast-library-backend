@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
             title: "protected route",
             user: req.user
         }
-    })
-})
+    });
+});
 
 module.exports = router;
