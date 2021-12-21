@@ -68,14 +68,17 @@ http://localhost:3001/
 - ``GET - "/podcasts/all"`` - Returns all podcast.
 - ``GET - "/podcasts/:id"`` - Returns podcast by ID.
 - ``GET - "/podcasts/title/:title"`` - Returns a podcast by title.
+- ``GET - "/podcasts/genre/all"`` - Returns all categories.
 - ``GET - "/podcasts/genre/:genre"`` - Returns podcasts by category.
 - ``GET - "/podcasts/author/:author"`` - Returns podcasts by author.
-- ``POST - "/podcasts/:id"`` - add a podcast per id.
+- ``POST - "/podcasts/insert"`` - Add a podcast.
 - ``DELETE - "podcasts/:id"`` - Delete podcast by ID.
 
-- ``GET - "/users/:id"`` - Returns a user by id.
-- ``DELETE - "/users/:id"`` - Delete user by ID.
-- ``POST - "/users/:id"`` - add a user per id.
+- ``GET - "/user/all"`` - Returns all users.
+- ``GET - "/user/:id"`` - Returns a user by id.
+- ``DELETE - "/user/:id"`` - Delete user by ID.
+- ``POST - "/user/register"`` - Register a user.
+- ``POST - "/user/login"`` - Login a user.
 
 # ⚙️ Tools:
 
