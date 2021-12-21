@@ -1,0 +1,56 @@
+name: Build and Deploy back-end
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+env:
+  REGISTRY: "registry.digitalocean.com/podbuster"
+  IMAGE_NAME: "podcast-library-backend_web"
+jobs:
+  build:
+    name: Run back-end
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v2.4.0
+      - name: Instalar Node
+        uses: actions/setup-node@v1 
+        with:
+          node-version: '14.18.1'
+      - name: Instalar dependencias
+        run: npm install       
+      - name: test
+        run: npm run test
+      - name: Build container image
+        run: docker build -t $(echo $REGISTRY)/$(echo $IMAGE_NAME):$(echo $GITHUB_SHA | head -c7) .
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 600
+      
+      - name: Change name to latest for push
+        run: docker tag $(echo $REGISTRY)/$(echo $IMAGE_NAME):$(echo $GITHUB_SHA | head -c7) $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+      
+      - name: Push image to DigitalOcean Container Registry
+        run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+
+      - name: Deploy to Digital Ocean droplet via SSH action
+        uses: fifsky/ssh-action@master
+        with:
+          host: ${{ secrets.DO_HOST }}
+          user: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_KEY }}
+          
+          command: |
+            docker-compose down 
+            docker rmi $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+            docker pull registry.digitalocean.com/podbuster/podcast-library-backend_web:latest
+            docker-compose up -d
+            echo 'Deployment successfully to digital ocean'
+            
+      

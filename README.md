@@ -5,35 +5,62 @@
 
 # 🚀 Getting Started
 
-- Make a fork of the project, clone it and run the following:
+- 👇 Requirements:
+
+- [Nodejs 12+](https://nodejs.org/es/).
+- [Docker](https://www.docker.com/get-started) installed.
+
+1. Make a fork of the project, clone it and run the following:
+
 ```
 npm install
 ```
 
-- Run:
+2. Create an .env file with the following information and replace port: 
+
 ```
-npm run start
+DB_CONNECTION=mongodb://db:PORT/podcast-library
+```
+
+3. Run in your Linux terminal:
+
+```
+bash start.sh
+```
+
+4. Access:
+
+```
+http://localhost:3001/
 ```
 
 # 📜 Contributors:
 
-- [@RafaGG21](https://github.com/RafaGG21)
-- [@MariaLujanIbrahin](https://github.com/MariaLujanIbrahin)
-- [@pheralb](https://github.com/pheralb)
-- [@ririchi2](https://github.com/ririchi2)
+- 💻 [Ricardo Pineda - @ririchi2](https://github.com/ririchi2)
+- 💻 [Pablo Hernández - @pheralb](https://github.com/pheralb)
+- 💻 [Rafael Gandolfo - @RafaGG21](https://github.com/RafaGG21)
+- 💻 [María Lujan - @MariaLujanIbrahin](https://github.com/MariaLujanIbrahin)
 
 # 📁 Project Structure:
 
 ```
-    ├── controllers
-        ├── podcasts.js
-    ├── server.js
-    ├── init       
-    │   ├── 01_user.sql
-    │   ├── 02_podcast.sql
-    │   ├── 03_category.sql  
-    ├── package.json
+    ├── mongo-data
+       ├── db
+          ├── seed.js
+       ├── Dockerfile
+       ├── init.json  
+    ├── src
+       ├── controllers
+       ├── models       
+       ├── server.js      
+    ├── .dockerignore
+    ├── docker-compose.yml
+    ├── Dockerfile
     ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    ├── run.sh
+    ├── start.sh
 ```
 
 # 🪄 Endpoints:

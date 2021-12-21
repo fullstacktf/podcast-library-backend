@@ -3,19 +3,26 @@ version: "2"
 services:
     db:
         image: mongo
-        expose:
-            - "27017"
         volumes: 
             - ./mongo-data/db/seed.js:/docker-entrypoint-initdb.d/seed.js
             - mongodata:/data/db
+            - ./run.sh:/run.sh
+
+    mongo-db:
+        build: ./mongo-data
+        links:
+            - db
+
     web:
         build: .
         depends_on:
             - db
         ports:
-            - "8000:8000"
+            - "3001:3001"
         volumes: 
             - .:/src/
             - /node_modules
+        links:
+            - db
 volumes: 
   mongodata:
