@@ -36,7 +36,7 @@ router.get("/all", async (req, res) => {
         const users = await User.find();
         res.json(users);
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ message: err });
     }
 });
 
@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
                 });
             });
     } catch (err) {
-        res.json({ message: err });
+        res.status(400).json({ message: err });
     }
 });
 
@@ -60,7 +60,7 @@ router.delete("/:id", async (req, res) => {
         const user = await User.deleteOne({ _id: req.params.id });
         res.status(200).json(user);
     } catch (error) {
-        res.json({ message: err });
+        res.status(400).json({ message: err });
     }
 });
 

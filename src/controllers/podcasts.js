@@ -16,7 +16,7 @@ router.get("/all", async (req, res) => {
     const podcasts = await Podcast.find();
     res.json(podcasts);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
     const podcast = await Podcast.findOne({ _id: req.params.id });
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
@@ -37,7 +37,7 @@ router.get("/title/:title", async (req, res) => {
     const podcast = await Podcast.find({ title: { $regex: regex } });
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
@@ -47,7 +47,7 @@ router.get("/genre/all", async (req, res) => {
     const podcast = await Podcast.distinct("genre");
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
@@ -57,7 +57,7 @@ router.get("/genre/:genre", async (req, res) => {
     const podcast = await Podcast.find({ genre: req.params.genre });
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
@@ -68,25 +68,28 @@ router.get("/author/:author", async (req, res) => {
     const podcast = await Podcast.find({ author: { $regex: regex } });
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
 // 🚀 GET - /podcasts/author/all
-
 router.get("/author/all", async (req, res) => {
   try {
     const podcast = await Podcast.distinct("author");
     res.json(podcast);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).json({ message: err });
   }
 });
 
 // ❌ DELETE - /podcasts/:id ->
 router.delete("/:id", async (req, res) => {
-  const podcastName = await Podcast.deleteOne({ _id: req.params.id });
-  res.status(200).json(podcastName);
+  try {
+    const podcastName = await Podcast.deleteOne({ _id: req.params.id });
+    res.status(200).json(podcastName);
+  } catch (err) {
+    res.status(400).json({ message: err });
+  }
 });
 
 // ❓ 🔨 POST - /podcasts/insert ->
