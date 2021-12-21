@@ -36,7 +36,8 @@ router.get("/:id", async (req, res) => {
 // 🚀 GET - /podcasts/title/:title ->
 router.get("/title/:title", async (req, res) => {
   try {
-    const podcast = await Podcast.find({ title: req.params.title });
+    let regex = new RegExp(req.params.title, "g");
+    const podcast = await Podcast.find({ title: { $regex: regex } });
     res.json(podcast);
   } catch (err) {
     res.json({ message: err });
