@@ -72,6 +72,17 @@ router.get("/author/:author", async (req, res) => {
   }
 });
 
+// 🚀 GET - /podcasts/author/all
+
+router.get("/author/all", async (req, res) => {
+  try {
+    const podcast = await Podcast.distinct("author");
+    res.json(podcast);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 // ❌ DELETE - /podcasts/:id ->
 router.delete("/:id", async (req, res) => {
   const podcastName = await Podcast.deleteOne({ _id: req.params.id });
