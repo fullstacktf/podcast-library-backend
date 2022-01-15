@@ -17,7 +17,7 @@ describe('Authenticate a user who already exists: ', () => {
     it('Authenticate a user who already exists', (done) => {
         agent
             .post('/user/login')
-            .send({ password: 'richito', email: 'emaillll@emaaaaail.com' })
+            .send({ password: 'rafarafa', email: 'rafarafa@rafarafa.com' })
             .end(function (err, res) {
                 console.log(res.body)
                 expect(res).to.have.status(200);
@@ -30,7 +30,7 @@ describe('Register a user : ', () => {
     it('should insert an user ', (done) => {
         chai.request(url)
             .post('/user/register')
-            .send({ username: "rafaaeeeel", password: "rafaaaaapassword", email: "rafaaaaeeel@emaaail.com" })
+            .send({ username: "rafaarichi", password: "apassword", email: "rafaaal@emaail.com" })
             .end(function (err, res) {
                 console.log(res.body)
                 expect(res).to.have.status(200);
@@ -53,10 +53,10 @@ describe('delete the user with id 1: ', () => {
 });
 
 
-describe('get the user with id 61bce768656b45e15d623f19: ', () => {
-    it('should get the user with id 61bce768656b45e15d623f19', (done) => {
+describe('get the user with id 61c34363e131d5642b72566e: ', () => {
+    it('should get the user with id 61c34363e131d5642b72566e', (done) => {
         chai.request(url)
-            .get('/user/61bce768656b45e15d623f19')
+            .get('/user/61c34363e131d5642b72566e')
             .end(function (err, res) {
                 console.log(res.body)
                 expect(res).to.have.status(200);

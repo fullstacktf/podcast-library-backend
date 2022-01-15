@@ -3,9 +3,9 @@
     "title": "Is a vegan diet better for your health?",
     "author": "BBC",
     "episode": 2,
-    "description": "Podcast sobre la dieta vegana",
+    "description": "Podcast about vegan diet",
     "image": "http://i3.ytimg.com/vi/jgjiMixh_nE/hqdefault.jpg",
-    "language": "english",
+    "language": "English",
     "url": "https://www.youtube.com/watch?v=jgjiMixh_nE&t=1660s",
     "genre": "Veganismo",
     "provider": "YouTube"
@@ -14,9 +14,9 @@
     "title": "Space: What is dark matter",
     "author": "BBC",
     "episode": 1,
-    "description": "Podcast sobre la materia oscura",
+    "description": "Podcast about dark matter",
     "image": "http://i3.ytimg.com/vi/jgjiMixh_nE/hqdefault.jpg",
-    "language": "english",
+    "language": "English",
     "url": "https://www.youtube.com/watch?v=mG0P0-cwfd0",
     "genre": "Física",
     "provider": "YouTube"
@@ -27,7 +27,7 @@
     "episode": 53,
     "description": "Podcast sobre la inteligencia emocional y comprender las emociones propias y las de los demás",
     "image": "http://i3.ytimg.com/vi/WDqXWA5pBUE/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=WDqXWA5pBUE",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -38,7 +38,7 @@
     "episode": 117,
     "description": "Podcast sobre las consecuencias del estrés en el cuerpo",
     "image": "http://i3.ytimg.com/vi/hu-OH6UqlNI/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=hu-OH6UqlNI",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -49,7 +49,7 @@
     "episode": 67,
     "description": "Podcast sobre el sentimiento de culpa",
     "image": "http://i3.ytimg.com/vi/S0pHHydQGAU/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=S0pHHydQGAU",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -60,7 +60,7 @@
     "episode": 78,
     "description": "Podcast sobre como el autosabotaje nos afecta",
     "image": "http://i3.ytimg.com/vi/6ZQ1pIZeTXg/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=6ZQ1pIZeTXg",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -71,7 +71,7 @@
     "episode": 17,
     "description": "Podcast sobre como terminar una relación adecuadamente",
     "image": "http://i3.ytimg.com/vi/adM-f1-Lvmg/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=adM-f1-Lvmg",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -82,7 +82,7 @@
     "episode": 3,
     "description": "Podcast sobre la asertividad",
     "image": "http://i3.ytimg.com/vi/lvDkZpbzJWo/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=lvDkZpbzJWo",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -93,7 +93,7 @@
     "episode": 113,
     "description": "Podcast sobre la xenofobia",
     "image": "http://i3.ytimg.com/vi/bBM98uFb7Ps/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=bBM98uFb7Ps",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -104,7 +104,7 @@
     "episode": 80,
     "description": "Podcast sobre como afecta el amor en el cerebro",
     "image": "http://i3.ytimg.com/vi/QnagzT6uzTE/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=QnagzT6uzTE",
     "genre": "Psicología",
     "provider": "YouTube"
@@ -115,9 +115,130 @@
     "episode": 36,
     "description": "Podcast sobre el apego emocional",
     "image": "http://i3.ytimg.com/vi/K8cHFR4mZGo/hqdefault.jpg",
-    "language": "español",
+    "language": "Español",
     "url": "https://www.youtube.com/watch?v=K8cHFR4mZGo",
     "genre": "Psicología",
     "provider": "YouTube"
-  }
+  },
+  {
+    "title": "GP Abu Dabi F1 2021 - La carrera del siglo | El vlog de Efeuno",
+    "author": "Efeuno",
+    "episode": 21,
+    "description": "El Gran Premio de Abu Dabi / Abu Dhabi 2021 de Fórmula 1 quedará en la memoria de todos los aficionados de este deporte como una de las mejores carreras de la historia de la categoría. El final del Mundial no pudo ser más emocionante, decidiendo el campeonato en las últimas curvas de la última vuelta de la última carrera. El duelo entre Max Verstappen y Lewis Hamilton se ha saldado con el neerlandés proclamándose campeón del mundo por primera vez.",
+    "image": "http://i3.ytimg.com/vi/geBLHV4WxSQ/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=geBLHV4WxSQ",
+    "genre": "Fórmula 1",
+    "provider": "YouTube"
+},
+{
+    "title": "Resumen del GP de Arabia Saudí - F1 2021",
+    "author": "Efeuno",
+    "episode": 20,
+    "description": "El Gran Premio de Arabia Saudí 2021 de Fórmula 1 ha sido surrealista. El duelo entre Max Verstappen y Lewis Hamilton ha eclipsado la primera carrera en el circuito de Yeda (Jeddah), con el Mundial más al rojo vivo que nunca después de otro choque y varios incidentes entre los dos líderes.",
+    "image": "http://i3.ytimg.com/vi/WutOsL1Z_gw/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=WutOsL1Z_gw",
+    "genre": "Fórmula 1",
+    "provider": "YouTube"
+},
+{
+  "title": "Au cœur de l'histoire: Jack l’Eventreur démasqué (Franck Ferrand)",
+  "author": "Europe 1",
+  "episode": 78,
+  "description": "C'est l'une des plus grandes énigmes criminelles de tous les temps que Franck Ferrand nous propose de scruter, le sanguinolent dossier de Jack l'éventreur. ",
+  "image": "http://i3.ytimg.com/vi/GsQOlWCPU5Y/hqdefault.jpg",
+  "language": "Français",
+  "url": "https://www.youtube.com/watch?v=Bvt04Y7wTSg",
+  "genre": "Historia",
+  "provider": "YouTube"
+},
+{
+    "title": "Au cœur de l'histoire: La naissance des Etats-Unis (Franck Ferrand)",
+    "author": "Europe 1",
+    "episode": 64,
+    "description": "Le numéro spécial du magazine Historia consacré à la Naissance des États-Unis est actuellement en kiosques ; avec pour gros titre : États-Unis. Des idéaux des Pères fondateurs aux contradictions d’une démocratie. ",
+    "image": "http://i3.ytimg.com/vi/RB6QZz7OnTI/hqdefault.jpg",
+    "language": "Français",
+    "url": "https://www.youtube.com/watch?v=RB6QZz7OnTI",
+    "genre": "Historia",
+    "provider": "YouTube"
+},
+{
+    "title": "Reconectados Podcast de Videojuegos 4x41: Nintendo Switch OLED, State of Play, Assassin's Infinity",
+    "author": "Reconectados Podcast de Videojuegos",
+    "episode": 41,
+    "description": "¡Creíamos que íbamos a poder coger vacaciones pero la actualidad ha venido arrolladora, con la tan rumoreada Switch Pro ahora materializándose, ¿de manera decepcionante? También, el State of Play del 8 de julio con Deathloop (de Bethesda Xbox) como protagonista y acompañado de juegos menores para PS5 y PS4.",
+    "image": "http://i3.ytimg.com/vi/lbpkbWP1SJ0/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=lbpkbWP1SJ0",
+    "genre": "Videojuegos",
+    "provider": "YouTube"
+},
+{
+    "title": "PODCAST #4:// LOS BENEFICIOS DE LOS VIDEOJUEGOS ",
+    "author": "Cole Train",
+    "episode": 4,
+    "description": "Bienvenidos al podcast número 4, en el cuál hablaré de los beneficios que nos aportan los videojuegos, no solo como un medio para el entretenimiento sino como nos ayudan a mejorar tanto físicamente como mentalmente. Siéntate cómodo, relájate y disfruta de una conversación algo personal de lo que significa para mí esta comunidad y lo afortunado que me siento de pertenecer a ella, espero que os guste. Si queréis ver más vídeos curiosos de la saga souls visitad mi canal.",
+    "image": "http://i3.ytimg.com/vi/lbpkbWP1SJ0/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=20xps-WHj5k",
+    "genre": "Videojuegos",
+    "provider": "YouTube"
+},
+{
+    "title": "Milenio 3 - Caso Alcasser. Entrevista a Juan Ignacio Blanco. La noche mas oscura",
+    "author": "Milenio 3 Podcast",
+    "episode": 107,
+    "description": "El 13 de noviembre de 1992 tres adolescentes de Alcácer (Valencia) desaparecieron mientras hacían autostop para dirigirse a la fiesta de su instituto, en una discoteca de Picasent. Setenta y cinco días después y tras una intensa labor de búsqueda, los cuerpos de Miriam, Toñi y Desirée aparecieron sin vida en el interior de una fosa.",
+    "image": "http://i3.ytimg.com/vi/z0ACfjDyUX8/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=z0ACfjDyUX8",
+    "genre": "Misterio",
+    "provider": "YouTube"
+},
+{
+    "title": "Milenio 3 - Vida Extraterrestre",
+    "author": "Milenio 3",
+    "episode": 140,
+    "description": "Milenio 3, programa dirigido por Iker Jimenez.",
+    "image": "http://i3.ytimg.com/vi/tZxRhFfGkic/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=tZxRhFfGkic",
+    "genre": "Misterio",
+    "provider": "YouTube"
+},
+{
+    "title": "¿Cómo INICIAR en la CIBERSEGURIDAD?",
+    "author": "The Pentest Crew Podcast",
+    "episode": 1,
+    "description": "",
+    "image": "http://i3.ytimg.com/vi/NTn2Cln5C5k/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=NTn2Cln5C5k",
+    "genre": "Informática",
+    "provider": "YouTube"
+},
+{
+  "title": "Hablamos de ciberseguridad con Jennifer Torres",
+    "author": "Coding is caring",
+    "episode": 7,
+    "description": "Charla sobre ciberseguridad",
+    "image": "http://i3.ytimg.com/vi/YqdyeE7-_i8/hqdefault.jpg",
+    "language": "Español",
+    "url": "https://www.youtube.com/watch?v=YqdyeE7-_i8",
+    "genre": "Informática",
+    "provider": "YouTube"
+},
+{
+    "title": "Trabajando en MongoDB con Will",
+    "author": "Coding is caring",
+    "episode": 4,
+    "description": "Podcast sobre la base de datos MongoDB",
+    "image": "http://i3.ytimg.com/vi/A7IaCTiv2Pg/hqdefault.jpg",
+    "language": "",
+    "url": "https://www.youtube.com/watch?v=A7IaCTiv2Pg",
+    "genre": "Informática",
+    "provider": "YouTube"
+}
 ]
